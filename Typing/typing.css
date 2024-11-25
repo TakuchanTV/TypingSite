@@ -1,0 +1,12 @@
+h1{
+position: relative;
+top: 80px;
+text-align: center;
+color: blue;
+}
+
+input{
+    position: relative;
+    top: 120px;
+    left: 560px;
+}
