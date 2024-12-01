@@ -1,12 +1,33 @@
 h1{
 position: relative;
-top: 80px;
+top: 0px;
 text-align: center;
-color: blue;
+color: rgba(85, 85, 218, 0.916);
 }
 
 input{
     position: relative;
-    top: 120px;
+    top: 240px;
     left: 560px;
+    padding: 5px;
 }
+
+#Subject{
+    color: rgb(80, 94, 73);
+    font-size: 35px;
+    position: relative;
+    top: 65px;
+    animation: left-to-right 10s linear infinite;
+    
+    
+}
+
+@keyframes left-to-right{
+    from {
+       transform : translateX(0%)
+    }
+
+    to {
+       transform : translateX(100%)
+    }
+   }
