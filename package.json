@@ -1,0 +1,7 @@
+{"scripts": {
+"build": "tsc",
+"watch":"tsc --watch"},
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}
