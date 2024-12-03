@@ -1,10 +1,8 @@
 "use strict";
 const input = document.getElementById("input");
 const Subject = document.getElementById("Subject");
-const ShowInput = () => {
-    console.log(input.value);
-};
-input.addEventListener("keypress", ShowInput);
+const Right = document.getElementById("right");
+const Wrong = document.getElementById("wrong");
 const textList = [
     "エステルとエーテルはなんか似ている",
     "界面活性剤",
@@ -32,6 +30,14 @@ const textList = [
     "配向性を考慮する",
     "中和試験は気を付けよう",
     "研究職に憧れる",
+    "フィルムを作製する",
+    "ホスゲンは猛毒です",
+    "ハーバー・ボッシュ法は世界を救った",
+    "一日撹拌する間に作業する",
+    "反応の進行を確認した",
+    "研究室に入り浸る",
+    "使い終わったらしっかり洗おう",
+    "実験機器を予約する"
 ];
 const setRandomText = () => {
     const rnd = Math.floor(Math.random() * textList.length);
@@ -41,5 +47,29 @@ setRandomText();
 Subject.addEventListener("animationstart", () => {
     setInterval(() => {
         setRandomText();
-    }, 10000);
+    }, 15000);
+});
+const ShowInput = () => {
+    console.log(input.value);
+    if (input.value === Subject.textContent) {
+        Right.textContent = "正解です";
+        setTimeout(() => {
+            Right.textContent = "";
+        }, 800);
+    }
+    else {
+        Wrong.textContent = "不正解です";
+        setTimeout(() => {
+            Wrong.textContent = "";
+        }, 800);
+    }
+    input.value = "";
+};
+input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        ShowInput();
+    }
+});
+input.addEventListener("input", () => {
+    ShowInput;
 });
