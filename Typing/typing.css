@@ -6,9 +6,9 @@ color: rgba(85, 85, 218, 0.916);
 }
 
 input{
-    position: relative;
-    top: 240px;
-    left: 560px;
+    position: fixed;
+    top: 440px;
+    left: 530px;
     padding: 5px;
 }
 
@@ -17,10 +17,29 @@ input{
     font-size: 35px;
     position: relative;
     top: 65px;
-    animation: left-to-right 10s linear infinite;
+    animation: left-to-right 15s linear infinite;
     
     
 }
+
+#right{
+    color: red;
+    display: block;
+    position: relative;
+    top: 90px;
+    left: 560px;
+    font-size: 40px;
+   
+}
+#wrong{
+    color: rgb(51, 64, 206);
+    position: relative;
+    top: 90px;
+    left: 560px;
+    font-size: 40px;
+
+}
+
 
 @keyframes left-to-right{
     from {
@@ -31,3 +50,12 @@ input{
        transform : translateX(100%)
     }
    }
+
+@keyframes ShowAnswer {
+    from {
+        
+    }
+}
+ 
+
+ 
