@@ -37,22 +37,31 @@ const textList = [
     "反応の進行を確認した",
     "研究室に入り浸る",
     "使い終わったらしっかり洗おう",
-    "実験機器を予約する"
+    "実験機器を予約する",
+    "クロロホルムは危ない",
+    "健康診断に行く",
 ];
 const setRandomText = () => {
     const rnd = Math.floor(Math.random() * textList.length);
     Subject.textContent = textList[rnd];
 };
 setRandomText();
-Subject.addEventListener("animationstart", () => {
+const scheduleNextTextChange = () => {
     setInterval(() => {
         setRandomText();
     }, 15000);
-});
+}; // 15秒後にテキストを変更 };
+Subject.addEventListener("animationstart", scheduleNextTextChange);
 const ShowInput = () => {
     console.log(input.value);
+    let count = 0;
     if (input.value === Subject.textContent) {
         Right.textContent = "正解です";
+        count++;
+        setRandomText();
+        Subject.style.animation = "none";
+        requestAnimationFrame(() => {
+        });
         setTimeout(() => {
             Right.textContent = "";
         }, 800);
