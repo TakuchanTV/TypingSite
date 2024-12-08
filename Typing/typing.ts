@@ -16,7 +16,7 @@ const textList : string[] = [
     "メタノールは恐ろしい",
     "分子は常に動いているよ",
     "ヒドロキシ伸縮振動を探す",
-    "チャー収率はチャーシューとは関係ない",
+    "チャー収率はチャーシューは関係ない",
     "TNTは爆弾よ",
     "UV照射光で修復させる",
     "キラルは語感が可愛い",
@@ -26,7 +26,7 @@ const textList : string[] = [
     "触媒を入れて反応を促進させる",
     "たんぱく質が熱で失活する",
     "高分子化学は難しい",
-    "研究と勉強は似ているけど違う",
+    "研究と勉強は違う",
     "白衣が汚れた",
     "学会発表は緊張する",
     "教授に質問する",
@@ -43,21 +43,32 @@ const textList : string[] = [
     "実験機器を予約する",
     "クロロホルムは危ない",
     "健康診断に行く",
+    "良識を語る",
+    "就活はつらい",
+    "分析装置は大切に使おう",
+    "呑み会は誘われたら行こう",
+    "サンプルを引っ張る",
+    "教室から退出する",
+    "教養を身に着ける",
+    "遅刻しないようにしよう",
+
 ];
 
 
 const setRandomText = () => {
+    Subject.style.animation = "left-to-right 15s linear infinite"
     const rnd:number = Math.floor(Math.random()*textList.length)
     Subject.textContent = textList[rnd]
 }
 setRandomText();
 
 const scheduleNextTextChange = () => {
-     setInterval(() => { 
+      setInterval(() => { 
         setRandomText(); 
-       
-},15000);
-} // 15秒後にテキストを変更 };
+        scheduleNextTextChange();
+},15000);// 15秒後にテキストを変更 };
+ }
+
 
 
 Subject.addEventListener("animationstart", scheduleNextTextChange);
@@ -66,17 +77,12 @@ Subject.addEventListener("animationstart", scheduleNextTextChange);
 
 const ShowInput = () => {
     console.log(input.value)
-    let count:number = 0;
     if(input.value === Subject.textContent ){
+        let count:number = 0;
         Right.textContent = "正解です"
-        count++
-        setRandomText()
-        Subject.style.animation = "none"
-        requestAnimationFrame(() => {
-          
-            })
+        count++;
+        console.log(count);
         
-      
         setTimeout(() => {
            Right.textContent = ""; 
         },800)
