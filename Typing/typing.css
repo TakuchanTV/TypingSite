@@ -16,7 +16,8 @@ input{
     color: rgb(80, 94, 73);
     font-size: 35px;
     position: relative;
-    top: 65px;
+    top: 85px;
+    left: 450px;
     /* animation: left-to-right 15s linear infinite */
     
 }
@@ -24,17 +25,17 @@ input{
 #right{
     color: red;
     display: block;
-    position: relative;
-    top: 90px;
-    left: 560px;
+    position: absolute;
+    top: 330px;
+    left: 530px;
     font-size: 40px;
    
 }
 #wrong{
     color: rgb(51, 64, 206);
-    position: relative;
-    top: 90px;
-    left: 560px;
+    position: absolute;
+    top: 330px;
+    left: 530px;
     font-size: 40px;
 
 }
@@ -57,4 +58,31 @@ input{
 }
  
 
- 
+ #timer {
+    position: absolute;
+    top: 60px;
+    left: 530px;
+    font-size: 34px;
+ }
+
+ #correctanswers {
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    font-size: 45px;
+    /* animation:  fadeup 15s  ease-in-out forwards; */
+    white-space: nowrap;
+
+ }
+
+ @keyframes fadeup {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ }
